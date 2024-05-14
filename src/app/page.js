@@ -17,19 +17,17 @@ export default function Home() {
           <div
             key={item.id}
             onClick={() => setSelectedTab(item.id)}
-            className={`
-            ${selectedTab == item.id ? "text-black" : "text-white"}
-            relative rounded-sm px-8 py-4 text-sm  transition
-            `}
+            className={`relative rounded-lg px-8 py-4 text-sm  transition cursor-pointer z-10 flex items-center justify-center`}
           >
+            <span className=" z-50 text-white">{item.name}</span>
+
             {selectedTab == item.id && (
               <motion.span
                 layoutId="bubble"
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                className="absolute inset-0 z-10 bg-teal-400 rounded-sm mix-blend-difference"
+                className="absolute inset-0 -z-0 bg-blue-500 rounded-md"
               />
             )}
-            {item.name}
           </div>
         ))}
       </div>
